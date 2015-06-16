@@ -119,6 +119,7 @@
     app.controller("UsersController",["$http",
         function($http){
             var userCtrl = this;
+            this.LOGIN_API = "../api/login";
             this.USERS_API = "../api/users";
 
             this.listUsers = function () {
@@ -126,9 +127,15 @@
                 userCtrl.users = {};
                 $http.get(this.USERS_API)
                     .success(function (data) {
-                        if (data != "") {
+                        if(typeof(data[0].username)!="undefined"){
                             userCtrl.users = data;
                         }
+                        else{
+                            alert("You must login first");
+                            window.location = userCtrl.LOGIN_API;
+                        }
+                    }).error(function(){
+                        alert("error")
                     })
             };
     }]);
