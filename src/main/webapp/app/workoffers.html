@@ -1,0 +1,17 @@
+<div class="container" ng-controller="WorkoffersController as controller">
+
+    <div class="text-right">
+        <button class="btn btn-lg btn-primary" ng-click="controller.listWorkOffers()">
+            <span >Get Work Offers List</span>
+        </button>
+    </div>
+
+    <div class="tab-content"  ng-repeat="workOffer in controller.workOffers">
+        <blockquote>
+            Country: {{workOffer.country}}<br>
+            Minimum Number of Weeks: {{workOffer.minNumWeeks}}<br>
+            Maximum Number of Weeks: {{workOffer.maxNumWeeks}}
+        </blockquote>
+    </div>
+
+</div>

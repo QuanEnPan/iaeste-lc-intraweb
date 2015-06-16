@@ -1,0 +1,44 @@
+<section>
+    <form name="companyForm" ng-submit="companyForm.$valid && controller.addCompany()" novalidate>
+        <!--  Company Live Preview -->
+        <div ng-show="controller.newCompany.name">
+            <h5>Preview your Company</h5>
+            <blockquote>
+            Name: {{controller.newCompany.name}}
+            </blockquote>
+			<blockquote>
+			Headquarters: {{controller.newCompany.headquarters}}
+			</blockquote>
+			<blockquote>
+			Work Place: {{controller.newCompany.workPlace}}
+			</blockquote>
+			<blockquote>
+			Foundation Date: {{controller.newCompany.foundationDate}}
+			</blockquote>
+			<blockquote>
+			Phone Number: {{controller.newCompany.phoneNumber}}
+			</blockquote>
+			
+        </div>
+
+        <!--  Company Form -->
+        <fieldset class="form-group">
+            <textarea ng-model="controller.newCompany.name" class="form-control" placeholder="Company Name..." title="Company" required></textarea>
+        </fieldset>
+		<fieldset class="form-group">
+            <textarea ng-model="controller.newCompany.headquarters" class="form-control" placeholder="Headquarters..." title="Company" required></textarea>
+        </fieldset>
+		<fieldset class="form-group">
+            <textarea ng-model="controller.newCompany.workPlace" class="form-control" placeholder="Work place..." title="Company" required></textarea>
+        </fieldset>
+		<fieldset class="form-group">
+            <textarea ng-model="controller.newCompany.foundationDate" class="form-control" placeholder="Foundation date..." title="Company" required></textarea>
+        </fieldset>
+		<fieldset class="form-group">
+            <textarea ng-model="controller.newCompany.phoneNumber" class="form-control" placeholder="Phone number..." title="Company" ></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+            <input type="submit" class="btn btn-primary pull-right" value="Submit New Company"/>
+        </fieldset>
+    </form>
+</section>

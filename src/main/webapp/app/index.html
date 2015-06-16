@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" ng-app="companiesJS">
+<head>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AngularJS client for Iaeste-Lc-Intraweb-Master">
+    <meta name="author" content="Eduard, Alberto i Quan">
+    <title>IAESTE LC Intraweb</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="company-tab/company-tab.js"></script>
+    <script src="company-form/company-form.js"></script>
+    <script src="login-form/login-form.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">IntrawebAppJs</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ng-class="{ active:tab.isSet(1) }"><a href="" ng-click="tab.setTab(1)">Companies</a></li>
+                <li ng-class="{ active:tab.isSet(2) }"><a href="" ng-click="tab.setTab(2)">Users</a></li>
+                <li ng-class="{ active:tab.isSet(3) }"><a href="" ng-click="tab.setTab(3)">WorkOffers</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<header>
+    <h1 class="text-center">IntrawebApp</h1>
+    <h3 class="text-center">The AngularJS client for Iaeste-Lc-Intraweb-Master</h3>
+</header>
+
+<div>
+    <companies ng-show="tab.isSet(1)"></companies>
+    <users ng-show="tab.isSet(2)"></users>
+    <workoffers ng-show="tab.isSet(3)"></workoffers>
+</div>
+
+</body>
+</html>

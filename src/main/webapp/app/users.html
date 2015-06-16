@@ -1,0 +1,16 @@
+<div class="container" ng-controller="UsersController as controller">
+
+
+    <div class="text-right">
+        <button class="btn btn-lg btn-primary" ng-click="controller.listUsers()">
+            <span >Get User List (only allows to logged user)</span>
+            <!--<span ng-show="controller.isLoading()"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...</span>-->
+
+        </button>
+    </div>
+
+    <div class="tab-content"  ng-repeat="user in controller.users">
+        <blockquote>user: {{user.username}}</blockquote>
+    </div>
+
+</div>
